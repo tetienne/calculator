@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#e8e8e8">
+  <title>Calculatrice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator" role="application" aria-label="Calculatrice">
+    <div class="display" data-display aria-live="polite" aria-atomic="true">0</div>
+    <div class="keys">
+      <button type="button" class="key key--util" data-action="clear" aria-label="Tout effacer">AC</button>
+      <button type="button" class="key key--util" data-action="sign" aria-label="Changer le signe">+/&minus;</button>
+      <button type="button" class="key key--util" data-action="percent" aria-label="Pourcent">%</button>
+      <button type="button" class="key key--op" data-action="operator" data-operator="/" aria-label="Diviser">&divide;</button>
+
+      <button type="button" class="key" data-key="7">7</button>
+      <button type="button" class="key" data-key="8">8</button>
+      <button type="button" class="key" data-key="9">9</button>
+      <button type="button" class="key key--op" data-action="operator" data-operator="*" aria-label="Multiplier">&times;</button>
+
+      <button type="button" class="key" data-key="4">4</button>
+      <button type="button" class="key" data-key="5">5</button>
+      <button type="button" class="key" data-key="6">6</button>
+      <button type="button" class="key key--op" data-action="operator" data-operator="-" aria-label="Soustraire">&minus;</button>
+
+      <button type="button" class="key" data-key="1">1</button>
+      <button type="button" class="key" data-key="2">2</button>
+      <button type="button" class="key" data-key="3">3</button>
+      <button type="button" class="key key--op" data-action="operator" data-operator="+" aria-label="Additionner">+</button>
+
+      <button type="button" class="key key--zero" data-key="0">0</button>
+      <button type="button" class="key" data-key=".">.</button>
+      <button type="button" class="key key--op" data-action="equals" aria-label="Égal">=</button>
+    </div>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>
