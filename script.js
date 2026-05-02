@@ -14,10 +14,11 @@
 
   const format = (n) => {
     if (!Number.isFinite(n)) return 'Erreur';
-    const rounded = Number.parseFloat(n.toPrecision(12));
-    let s = String(rounded);
-    if (s.length > MAX_LEN) s = rounded.toExponential(6);
-    return s;
+    for (let p = 12; p > 0; p--) {
+      const s = String(Number.parseFloat(n.toPrecision(p)));
+      if (s.length <= MAX_LEN) return s;
+    }
+    return n.toExponential(6);
   };
 
   const render = () => {
@@ -57,7 +58,9 @@
       state.waitingForOperand = false;
       return;
     }
-    if (!state.current.includes('.')) state.current += '.';
+    if (state.current.includes('.')) return;
+    if (state.current.replace('-', '').length >= MAX_LEN) return;
+    state.current += '.';
   };
 
   const clearAll = () => {
